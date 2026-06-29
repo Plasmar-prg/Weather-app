@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <div class="weather-app">
+        <div class="header">
+            <h1>Погода в вашем городе</h1>
+            <form id="weather-form">
+                <input type="text" id="city-input" placeholder="Введите город..." required>
+                <button type="submit">Получить погоду</button>
+            </form>
+        </div>
+
+        <div id="weather-output" class="weather-output hidden">
+            <div class="city-name"></div>
+            <div class="weather-info">
+                <img id="weather-icon" src="" alt="Погодная иконка">
+                <div class="temperature"></div>
+                <div class="description"></div>
+            </div>
+            <div class="details">
+                <div class="detail-item"><span class="detail-label">Ощущается как:</span><span class="detail-value feels-like"></span></div>
+                <div class="detail-item"><span class="detail-label">Влажность:</span><span class="detail-value humidity"></span></div>
+                <div class="detail-item"><span class="detail-label">Давление:</span><span class="detail-value pressure"></span></div>
+                <div class="detail-item"><span class="detail-label">Ветер:</span><span class="detail-value wind"></span></div>
+            </div>
+        </div>
+
+        <div id="forecast-section" class="forecast hidden">
+            <div class="forecast-title">Прогноз на неделю</div>
+            <div class="forecast-grid" id="forecast-grid">
+                <template id="forecast-card-template">
+                    <div class="forecast-item">
+                        <div class="forecast-date"></div>
+                        <img src="" alt="" class="forecast-icon">
+                        <div class="forecast-temp"></div>
+                        <div class="forecast-description"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div id="error" class="error"></div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+</html>
